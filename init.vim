@@ -8,10 +8,10 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'lokaltog/vim-easymotion'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-grepper'
 Plug 'mustache/vim-mustache-handlebars'
@@ -112,7 +112,6 @@ set shiftround
 set expandtab
 
 " Line numbers.
-set relativenumber
 set number
 set scrolloff=5
 
@@ -162,7 +161,7 @@ let g:vimrubocop_keymap=0
 " The Silver Searcher.
 if executable('ag')
   " Use ag over grep.
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup\ --nocolor\ --hidden
 
   " Use ag in CtrlP for listing files.
   let g:ctrlp_user_command='ag %s -l --nocolor --nogroup --hidden --ignore ".git" -g ""'
